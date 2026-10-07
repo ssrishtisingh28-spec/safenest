@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Passwords</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#855341",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ffdcd1",
+                        "on-primary-container": "#331205",
+                        "surface": "#fbf9f4",
+                        "on-surface": "#201a18",
+                        "background": "#fbf9f4",
+                        "on-background": "#201a18",
+                        "surface-variant": "#f4dfd8",
+                        "on-surface-variant": "#52433f",
+                        "surface-container": "#f5efe9",
+                        "surface-container-high": "#efe9e4",
+                        "surface-container-low": "#fbf5f0",
+                        "surface-container-highest": "#e9e3de",
+                        "outline": "#85736e",
+                        "outline-variant": "#d7c1bc",
+                        "secondary": "#77574e",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#ffdcd1",
+                        "on-secondary-container": "#2c150f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f4;
+            color: #201a18;
+        }
+        .glass-panel {
+            background: rgba(251, 249, 244, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0,0,0,0.05);
+            background-image: linear-gradient(rgba(251, 249, 244, 0.8), rgba(251, 249, 244, 0.8)), linear-gradient(to bottom right, rgba(0,0,0,0.02), rgba(0,0,0,0.05));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .recessed-input {
+            background-color: #f5efe9;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid transparent;
+        }
+        .recessed-input:focus-within {
+            border-color: #855341;
+            box-shadow: 0 0 8px rgba(133, 83, 65, 0.2), inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #a16b57 0%, #855341 100%);
+        }
+        
+        /* Hide scrollbar for category list */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen pb-24 md:pb-0 pt-20 md:pt-28 flex flex-col items-center">
+<!-- Top Navigation (Mobile App Bar) -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-margin-mobile py-4 bg-transparent flat no shadows border-b border-black/5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-black/10">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark metallic vault dial with subtle teal LED accents indicating a locked state. The lighting is moody and cinematic, highlighting the precision engineering of the sanctuary environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmaC_st-kLRLdo6VkJ1S5lC9Ji1cr83pcXLKqcvqzCyVYZv6HrYwCcyfZ-EAu0mV7WRpAC-kc476lzUuH726nRpyhuKvhu49xaKvSc6IFPDjZE1JEaxn1DGCMjrZ78WDLb7LJZdUIZoTXwN8PS12fyYR6rMOQLEvdTYWpj5iPeV7Tqei-heDXa5CWfW2uHgJKHNcbf4kQeRZe7WxbtelHBzhph7G3mWRzNGvk2WEERgkcK2usbqbDN"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Passwords</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Desktop Top Navigation -->
+<header class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl justify-between items-center px-margin-desktop py-4 bg-transparent flat no shadows max-w-container-max mx-auto left-0 right-0 border-b border-black/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-black/10">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A highly abstract, dark geometric pattern resembling a sophisticated encryption key matrix. Deep navy blues and stark blacks dominate, with occasional hairline glints of cyan. The texture suggests brushed aluminum and dark glass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdFKTzIg4KCifOHj-ZPew2hQQn0QvTUja8kvYaNzDwppcUTJsGv2ar09kg3nBByp0dbhOzE-zniFoJCuPUisoVV5FrGAYl1xBDtysefqlux3Jybfp5HzN7VECXn0FcOUo0A5YnbHoaR9XAQR55yqT398cJOmrhBJrLvXpOUZs23yc3DpmEFbJ3H4wyqgFCWdX49hJXlYoac6MMQlaMqB7Yg22rvnVJ0RHEAr5HeR1HXZGK71AsEHZv"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">SafeNest</h1>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span> Home
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">folder_open</span> Files
+            </a>
+<a class="font-label-md text-label-md text-primary bg-primary/10 px-4 py-2 rounded-xl flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">password</span> Passwords
+            </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span> Profile
+            </a>
+</nav>
+<button class="text-on-surface-variant hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop flex flex-col gap-6 md:gap-8">
+<!-- Search and Action Bar -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 w-full">
+<div class="relative w-full md:w-96 group">
+<div class="recessed-input flex items-center rounded-xl px-4 py-3 transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant mr-3 group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-transparent border-none outline-none text-on-surface w-full font-body-md placeholder:text-on-surface-variant/70 focus:ring-0 p-0" placeholder="Search passwords..." type="text"/>
+</div>
+</div>
+<!-- Desktop Add Button -->
+<button class="hidden md:flex bg-gradient-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl items-center gap-2 hover:opacity-90 active:scale-95 transition-all ambient-shadow">
+<span class="material-symbols-outlined">add</span>
+                Add Password
+            </button>
+</div>
+<!-- Categories -->
+<div class="w-full overflow-x-auto no-scrollbar pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<div class="flex gap-3 md:gap-4 min-w-max">
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-primary border border-primary/30 flex items-center gap-2 bg-primary/5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> All Vaults
+                </button>
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                    Social Media
+                </button>
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                    Banking
+                </button>
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                    Email
+                </button>
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                    Shopping
+                </button>
+<button class="glass-panel px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                    Work
+                </button>
+</div>
+</div>
+<!-- Password Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col gap-4 ambient-shadow group hover:bg-surface-container-low transition-colors border border-black/5">
+<div class="flex justify-between items-start border-b border-black/5 pb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-black/5">
+<span class="material-symbols-outlined text-primary text-[28px]">mail</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface">Gmail</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">john.doe@gmail.com</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="font-body-lg text-body-lg text-on-surface tracking-widest bg-surface-container-high px-3 py-1 rounded border border-black/5 flex items-center h-10">
+                        ••••••••••••
+                    </div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-black/5 hover:text-primary transition-all active:scale-95 bg-surface-container">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col gap-4 ambient-shadow group hover:bg-surface-container-low transition-colors border border-black/5">
+<div class="flex justify-between items-start border-b border-black/5 pb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-black/5 relative overflow-hidden">
+<span class="absolute inset-0 bg-secondary/10"></span>
+<span class="material-symbols-outlined text-secondary text-[28px] relative z-10">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface">Chase Bank</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">johndoe_finance</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="font-body-lg text-body-lg text-on-surface tracking-widest bg-surface-container-high px-3 py-1 rounded border border-black/5 flex items-center h-10">
+                        ••••••••••••••••
+                    </div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-black/5 hover:text-primary transition-all active:scale-95 bg-surface-container">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col gap-4 ambient-shadow group hover:bg-surface-container-low transition-colors border border-black/5">
+<div class="flex justify-between items-start border-b border-black/5 pb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-black/5">
+<span class="material-symbols-outlined text-outline text-[28px]">code</span>
+</div>
+<div>
+<h3 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-on-surface">GitHub</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">dev_john</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="font-body-lg text-body-lg text-on-surface tracking-widest bg-surface-container-high px-3 py-1 rounded border border-black/5 flex items-center h-10">
+                        ••••••••••
+                    </div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-black/5 hover:text-primary transition-all active:scale-95 bg-surface-container">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile FAB -->
+<button class="md:hidden fixed bottom-24 right-margin-mobile w-14 h-14 rounded-full bg-gradient-primary text-on-primary flex items-center justify-center ambient-shadow z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-xl font-label-sm text-label-sm font-headline-md text-headline-md font-bold text-primary fixed bottom-0 w-full z-50 border-t border-black/5 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] flex justify-around items-center px-4 py-3 w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">folder_open</span>
+<span class="font-label-sm text-label-sm">Files</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span class="font-label-sm text-label-sm">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl p-2 hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">password</span>
+<span class="font-label-sm text-label-sm">Passwords</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple copy interaction feedback
+        document.querySelectorAll('button:has(.material-symbols-outlined:contains("content_copy"))').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                icon.textContent = 'check';
+                icon.classList.add('text-primary');
+                setTimeout(() => {
+                    icon.textContent = 'content_copy';
+                    icon.classList.remove('text-primary');
+                }, 1500);
+            });
+        });
+    </script>
+</body></html>

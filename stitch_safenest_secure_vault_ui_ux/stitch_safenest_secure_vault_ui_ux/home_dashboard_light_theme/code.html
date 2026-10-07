@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-high": "#eae8e3",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#30312e",
+                "tertiary-fixed": "#fadcd2",
+                "primary-fixed-dim": "#e7bdb1",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f4",
+                "surface-container": "#f0eee9",
+                "secondary": "#735c00",
+                "primary-container": "#5d4037",
+                "secondary-container": "#fed65b",
+                "outline": "#827470",
+                "tertiary": "#3f2d26",
+                "on-secondary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#ddc1b7",
+                "on-primary-fixed": "#2c160e",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#e7bdb1",
+                "on-primary-fixed-variant": "#5d4037",
+                "surface-dim": "#dbdad5",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary-fixed": "#241a00",
+                "inverse-on-surface": "#f2f1ec",
+                "surface-tint": "#77574d",
+                "background": "#fbf9f4",
+                "mocha-dark": "#3E2723",
+                "tertiary-container": "#57433b",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#ffe088",
+                "surface-variant": "#e4e2dd",
+                "on-tertiary-container": "#cbb0a6",
+                "on-tertiary-fixed-variant": "#56423b",
+                "primary-fixed": "#ffdbd0",
+                "on-background": "#1b1c19",
+                "sand-light": "#EFEBE9",
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f4",
+                "primary": "#442a22",
+                "charcoal-text": "#1A1A1A",
+                "copper-accent": "#B87333",
+                "surface-container-highest": "#e4e2dd",
+                "on-tertiary-fixed": "#271812",
+                "on-primary-container": "#d4ada1",
+                "on-surface": "#1b1c19",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#745c00",
+                "surface-cream": "#F9F7F2",
+                "surface-container-low": "#f5f3ee",
+                "on-surface-variant": "#504441",
+                "outline-variant": "#d4c3be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "40px",
+                "unit": "8px",
+                "container-max": "1200px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "JetBrains Mono"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-xl": [
+                        "Manrope"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: #ffffff;
+            border: 1px solid rgba(93, 64, 55, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(93,64,55,0.05), 0 2px 4px -1px rgba(93,64,55,0.03);
+        }
+        .recessed-input {
+            background-color: #f5f3ee;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid rgba(93,64,55,0.1);
+        }
+        .bg-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(184, 115, 51, 0.08) 0%, rgba(251, 249, 244, 0) 70%);
+            top: -150px;
+            right: -100px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-charcoal-text font-body-md min-h-screen relative overflow-x-hidden pb-24 md:pb-0">
+<div class="bg-glow"></div>
+<!-- TopAppBar Mobile -->
+<header class="fixed top-0 w-full z-50 bg-surface-bright/90 dark:bg-surface-dim/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-3 cursor-pointer active:scale-95 transition-transform text-primary dark:text-primary-fixed-dim">
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/30" data-alt="A highly detailed close-up portrait of a professional individual serving as a user avatar. The person has a calm, confident expression, set against a dark, minimalist background. Soft, high-quality studio lighting highlights their features, evoking a sense of trust and security. The aesthetic is premium, dark mode, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCHpsKYq68dZZFndlhz3nsD7X7YIpJi9ovEvYFfNyH4goPM_ZMIJ1_8lYqDMP3-5U2QLc9XFzyjw79476EqY_Rt3W2MKupJ5fulOO7WO4dO9u8uN_eY6_aHDBiwf-eM-DIzX7GoOADv3DPJqIX10kuDHhf558yCgbB93a_Kwt7qyoYhDSG8eYz5onL5YqwZ9Xy9U7VMj7S4I5hz0sh_Jp-hpAjM-2vBEoY9s-TeQN03JJd_d29rquS"/>
+<h1 class="font-headline-md text-headline-md font-bold text-mocha-dark dark:text-primary-fixed truncate">Welcome</h1>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="pt-24 md:pt-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-10">
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8">
+<!-- Security Card -->
+<div class="glass-panel rounded-xl p-6 md:col-span-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-copper-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-start gap-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-sand-light flex items-center justify-center flex-shrink-0 text-primary border border-primary/20 relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="absolute inset-0 rounded-full border border-primary animate-ping opacity-20"></div>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-md text-headline-lg-mobile md:text-headline-md text-charcoal-text mb-1">Your SafeNest is Secure</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">All primary vaults encrypted and monitored.</p>
+</div>
+</div>
+<div class="z-10 flex flex-col items-center md:items-end w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-outline-variant/20">
+<div class="text-primary font-headline-xl text-headline-xl mb-1">92<span class="text-on-surface-variant font-headline-md text-headline-md">/100</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Security Score</div>
+</div>
+</div>
+<!-- Storage Card -->
+<div class="glass-panel rounded-xl p-6 md:col-span-4 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-label-md text-label-md text-charcoal-text font-semibold">Storage</h3>
+<span class="material-symbols-outlined text-on-surface-variant">cloud</span>
+</div>
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-charcoal-text mb-1">42.8 GB</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-6">of 100 GB used</p>
+</div>
+<div>
+<div class="h-2 w-full recessed-input rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-copper-accent rounded-full" style="width: 42.8%"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Encrypted Data</span>
+<span>42%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="mb-10">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider pl-1">Quick Actions</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-sand-light flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">upload</span>
+</div>
+<span class="font-label-md text-label-md text-charcoal-text group-hover:text-primary transition-colors">Upload</span>
+</button>
+<button class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-sand-light flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">document_scanner</span>
+</div>
+<span class="font-label-md text-label-md text-charcoal-text group-hover:text-primary transition-colors">Scan Document</span>
+</button>
+<button class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-sand-light flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">key</span>
+</div>
+<span class="font-label-md text-label-md text-charcoal-text group-hover:text-primary transition-colors">Add Password</span>
+</button>
+<button class="glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-sand-light flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<span class="font-label-md text-label-md text-charcoal-text group-hover:text-primary transition-colors">Create Note</span>
+</button>
+</div>
+</div>
+<!-- Categories & Recent Activity Split -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Categories -->
+<div class="md:col-span-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider pl-1">Categories</h3>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-4">
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-primary/50">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">folder</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">Documents</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">124 Items</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-transparent">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">image</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">Photos</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">892 Items</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-transparent">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">movie</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">Videos</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">45 Items</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-transparent">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">picture_as_pdf</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">PDFs</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">67 Items</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-transparent">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">badge</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">IDs</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">12 Items</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[140px] md:min-w-0 flex flex-col gap-4 cursor-pointer hover:bg-surface-container-low transition-colors border-l-4 border-l-transparent">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">more_horiz</span>
+<div>
+<div class="font-label-md text-label-md text-charcoal-text mb-1">Other</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">203 Items</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity -->
+<div class="md:col-span-4">
+<div class="flex justify-between items-end mb-4 pl-1">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Recent Activity</h3>
+<button class="font-label-sm text-label-sm text-primary hover:text-copper-accent transition-colors">View All</button>
+</div>
+<div class="glass-panel rounded-xl p-2 flex flex-col">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-sand-light flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-charcoal-text truncate max-w-[160px]">Passport.pdf</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">2 hours ago</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+</div>
+<div class="h-px w-full bg-outline-variant/20 mx-auto w-[90%]"></div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-sand-light flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-charcoal-text truncate max-w-[160px]">Vacation.jpg</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+</div>
+<div class="h-px w-full bg-outline-variant/20 mx-auto w-[90%]"></div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-sand-light flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">folder</span>
+</div>
+<div>
+<div class="font-body-md text-body-md text-charcoal-text truncate max-w-[160px]">Tax Returns 2023</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Oct 12</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-bright/90 dark:bg-surface-dim/90 rounded-t-xl backdrop-blur-xl border-t border-outline-variant/30 shadow-[0_-4px_6px_-1px_rgba(93,64,55,0.05)] flex justify-around items-center h-20 pb-safe px-4 w-full md:hidden">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim bg-secondary-container/20 rounded-xl px-3 py-1 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<!-- Files -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 px-3 py-1">
+<span class="material-symbols-outlined mb-1">folder_open</span>
+<span class="font-label-sm text-label-sm">Files</span>
+</button>
+<!-- Upload -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 px-3 py-1">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span class="font-label-sm text-label-sm">Upload</span>
+</button>
+<!-- Vault -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 px-3 py-1">
+<span class="material-symbols-outlined mb-1">lock</span>
+<span class="font-label-sm text-label-sm">Vault</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 px-3 py-1">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

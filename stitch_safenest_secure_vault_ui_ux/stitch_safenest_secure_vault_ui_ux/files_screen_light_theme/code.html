@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Files</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&amp;family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-high": "#eae8e3",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#30312e",
+                "tertiary-fixed": "#fadcd2",
+                "primary-fixed-dim": "#e7bdb1",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f4",
+                "surface-container": "#f0eee9",
+                "secondary": "#735c00",
+                "primary-container": "#5d4037",
+                "secondary-container": "#fed65b",
+                "outline": "#827470",
+                "tertiary": "#3f2d26",
+                "on-secondary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#ddc1b7",
+                "on-primary-fixed": "#2c160e",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#e7bdb1",
+                "on-primary-fixed-variant": "#5d4037",
+                "surface-dim": "#dbdad5",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary-fixed": "#241a00",
+                "inverse-on-surface": "#f2f1ec",
+                "surface-tint": "#77574d",
+                "background": "#fbf9f4",
+                "mocha-dark": "#3E2723",
+                "tertiary-container": "#57433b",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#ffe088",
+                "surface-variant": "#e4e2dd",
+                "on-tertiary-container": "#cbb0a6",
+                "on-tertiary-fixed-variant": "#56423b",
+                "primary-fixed": "#ffdbd0",
+                "on-background": "#1b1c19",
+                "sand-light": "#EFEBE9",
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f4",
+                "primary": "#442a22",
+                "charcoal-text": "#1A1A1A",
+                "copper-accent": "#B87333",
+                "surface-container-highest": "#e4e2dd",
+                "on-tertiary-fixed": "#271812",
+                "on-primary-container": "#d4ada1",
+                "on-surface": "#1b1c19",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#745c00",
+                "surface-cream": "#F9F7F2",
+                "surface-container-low": "#f5f3ee",
+                "on-surface-variant": "#504441",
+                "outline-variant": "#d4c3be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "40px",
+                "unit": "8px",
+                "container-max": "1200px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "JetBrains Mono"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-xl": [
+                        "Manrope"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Top App Bar (Desktop) -->
+<header class="hidden md:flex items-center justify-between px-margin-desktop h-16 w-full fixed top-0 z-50 bg-surface-bright/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold text-mocha-dark">SafeNest</span>
+<div class="w-px h-6 bg-outline-variant/50"></div>
+<nav class="flex gap-4">
+<a class="flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-2 text-primary font-bold bg-secondary-container/20 transition-all px-3 py-2 rounded-lg cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label-md text-label-md">Files</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-2 rounded-lg cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">lock</span>
+<span class="font-label-md text-label-md">Vault</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="user profile image" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist metallic sphere reflecting a deep navy blue and soft teal ambient light. The sphere sits on a matte dark slate surface, conveying high-end security, privacy, and digital sanctuary in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFddA32EmuVmbtTJEu7_gwyl5DahWkeC8TKxxxevbrj8qXPm1vAgevlxssh6np2pp-WrG6N-SDGvLI-U9HD3bkP7TXuXXmp6HubAhvWjZlsc2qNUm-Jpc4VlSzDMBV3BbCXI0Dbr5hvlnnNxIMKcV8Ul34hVTZOIkOSqoc0zK7UHKvoba7PHkj3urHP6f0YGpfBFAQLUZCSAG8GBc3FRcyrILaEkKGq3kPt3isktcot-gwg9UFPjcG"/>
+</div>
+</div>
+</header>
+<!-- Top App Bar (Mobile) -->
+<header class="flex md:hidden items-center justify-between px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface-bright/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="user profile image" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist metallic sphere reflecting a deep navy blue and soft teal ambient light. The sphere sits on a matte dark slate surface, conveying high-end security, privacy, and digital sanctuary in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDw-LKNtQTEi-gN_rWyxL1g1JZ7KrjRnDWz-uEASWbP-TBxNjGF_Sktdl2JwH-yGCRGjVwDow_Ghuw99dMuV0U9Adlag7hNm-mciGLW1Qg1SZdFPrKZOHTCVPkIYPu07I1BpN2qiV3IGqQmAFbbCKEvOBmkUvejqLiYsBvxcsgkogtzA3WuanxWXfGW1brkR7zkSHl1T03i2Zd0qhVTpYdRI9MYhLcd1tun3pr_RTDdCqO33__impi"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-mocha-dark">SafeNest</span>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 md:pt-28 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col gap-6">
+<!-- Search and Actions Bar -->
+<div class="flex flex-col md:flex-row gap-4 w-full justify-between items-start md:items-center">
+<!-- Search -->
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high text-on-surface border border-outline-variant/30 rounded-lg pl-10 pr-4 py-2 font-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/70 shadow-sm" placeholder="Search your vault..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/30 shadow-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span class="font-label-md text-label-md hidden md:inline">Filter</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+<div class="flex bg-surface-container-high rounded-lg p-1 border border-outline-variant/30 shadow-sm">
+<button aria-label="Grid View" class="p-1.5 rounded bg-surface-container-lowest text-primary shadow-sm transition-all border border-outline-variant/20">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button aria-label="List View" class="p-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+<button class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">upload</span>
+                    Upload
+                </button>
+</div>
+</div>
+<!-- Categories Tabs -->
+<div class="w-full overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex gap-2 min-w-max">
+<button class="px-4 py-1.5 rounded-full bg-secondary-container/20 text-primary border border-secondary-container font-label-md text-label-md whitespace-nowrap transition-all shadow-sm">All Files</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md whitespace-nowrap transition-all">Documents</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md whitespace-nowrap transition-all">Photos</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md whitespace-nowrap transition-all">Videos</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md whitespace-nowrap transition-all">PDFs</button>
+</div>
+</div>
+<!-- File Grid (Bento Style) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
+<!-- File Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/30 shadow-sm rounded-xl p-4 hover:shadow-md hover:border-outline hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-3 flex items-center justify-center overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-error opacity-90" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-charcoal-text truncate group-hover:text-primary transition-colors">Passport_Copy.pdf</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">2.4 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Oct 12</span>
+</div>
+</div>
+</div>
+<!-- File Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/30 shadow-sm rounded-xl p-4 hover:shadow-md hover:border-outline hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-3 flex items-center justify-center overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-primary-container opacity-90" style="font-variation-settings: 'FILL' 1;">article</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-charcoal-text truncate group-hover:text-primary transition-colors">Contract_Draft_v2.docx</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">45 KB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Oct 10</span>
+</div>
+</div>
+</div>
+<!-- File Card 3 (Image Preview) -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/30 shadow-sm rounded-xl p-4 hover:shadow-md hover:border-outline hover:-translate-y-1 transition-all duration-300 cursor-pointer col-span-2 md:col-span-1">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-full bg-surface-bright/90 backdrop-blur-md text-primary font-label-sm text-label-sm border border-outline-variant/30 shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Secure
+                    </span>
+</div>
+<div class="w-full aspect-[2/1] md:aspect-square bg-surface-container-low rounded-lg mb-3 overflow-hidden relative">
+<img alt="Image Preview" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="A highly secure, abstract dark mode digital vault interior. Walls are composed of matte black architectural panels with subtle teal neon light strips running along the seams, implying impenetrable data protection and high-end sanctuary aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_wF3dhvTq09rjXO0uGtQTu97fHFA2iqJplAUfAcu2Zkg6FSkd5a8__ISdSniS4zXPLubZN2AZRXcQS2pCeNYhTd3b7Jn7ksPj61YmMA6uKulalgvz5Pn0KZeVrLg_4EZ57Ak_OrWHfq1G__ndS_R3kT2qNmD0OTgRxkOrY8Q6whXXpH3YpI8L_SejKWXYRWQyP3CN4qr_vK5aq1rkNp5I7ZG6zc71vA_BXuOTqcBqd12OHTF3J8Wt"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-charcoal-text truncate group-hover:text-primary transition-colors">IMG_8492_Confidential.jpg</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">5.2 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 28</span>
+</div>
+</div>
+</div>
+<!-- File Card 4 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/30 shadow-sm rounded-xl p-4 hover:shadow-md hover:border-outline hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-3 flex items-center justify-center overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-tertiary opacity-90" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-charcoal-text truncate group-hover:text-primary transition-colors">Tax Documents 2023</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">14 Items</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 15</span>
+</div>
+</div>
+</div>
+<!-- File Card 5 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/30 shadow-sm rounded-xl p-4 hover:shadow-md hover:border-outline hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/30 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-3 flex items-center justify-center overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-secondary opacity-90" style="font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-charcoal-text truncate group-hover:text-primary transition-colors">Security_Cam_Front.mp4</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">128 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 01</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-bright/90 backdrop-blur-xl border-t border-outline-variant/30 shadow-[0_-4px_6px_-1px_rgba(93,64,55,0.05)] rounded-t-xl flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm-mobile md:text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/20 rounded-xl px-3 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label-sm text-label-sm-mobile md:text-label-sm mt-1">Files</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add_circle</span>
+<span class="font-label-sm text-label-sm-mobile md:text-label-sm mt-1">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">lock</span>
+<span class="font-label-sm text-label-sm-mobile md:text-label-sm mt-1">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm-mobile md:text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<!-- Global ambient background effects -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-surface">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-fixed/20 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-secondary-container/10 blur-[100px]"></div>
+</div>
+</body></html>

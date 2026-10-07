@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Hidden Nest</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#d4e4fa",
+                    "inverse-surface": "#d4e4fa",
+                    "surface-variant": "#273647",
+                    "surface-tint": "#89ceff",
+                    "primary": "#89ceff",
+                    "on-surface-variant": "#bec8d2",
+                    "secondary-container": "#00a6e0",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#2c3a4c",
+                    "surface-container-highest": "#273647",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-primary-container": "#003751",
+                    "on-secondary": "#00354a",
+                    "on-tertiary-fixed-variant": "#414756",
+                    "primary-fixed-dim": "#89ceff",
+                    "surface-container-lowest": "#010f1f",
+                    "tertiary-container": "#959bad",
+                    "inverse-primary": "#006591",
+                    "on-primary-fixed": "#001e2f",
+                    "outline": "#88929b",
+                    "primary-fixed": "#c9e6ff",
+                    "background": "#051424",
+                    "surface": "#051424",
+                    "inverse-on-surface": "#233143",
+                    "secondary": "#7bd0ff",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#dde2f6",
+                    "surface-container-high": "#1c2b3c",
+                    "surface-dim": "#051424",
+                    "surface-container-low": "#0d1c2d",
+                    "on-primary": "#00344d",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#151b29",
+                    "on-background": "#d4e4fa",
+                    "secondary-fixed": "#c4e7ff",
+                    "surface-container": "#122131",
+                    "on-tertiary": "#2a303f",
+                    "on-secondary-container": "#00374d",
+                    "outline-variant": "#3e4850",
+                    "primary-container": "#0ea5e9",
+                    "tertiary-fixed-dim": "#c1c6d9",
+                    "tertiary": "#c1c6d9",
+                    "on-tertiary-container": "#2d3342",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#7bd0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Geist"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Geist"],
+                    "headline-xl": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Kinetic Feedback & Security Animations */
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 20px rgba(137, 206, 255, 0.2); }
+            50% { opacity: 1; transform: scale(1.02); box-shadow: 0 0 40px rgba(137, 206, 255, 0.4); }
+        }
+        
+        .biometric-pulse {
+            animation: subtle-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Ambient Background Glow */
+        .ambient-glow {
+            background: radial-gradient(circle at center, rgba(137, 206, 255, 0.05) 0%, transparent 70%);
+        }
+
+        /* Inner Glow Border for Glassmorphism */
+        .glass-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-sans antialiased overflow-hidden selection:bg-primary/30 selection:text-primary">
+<!-- Ambient Background Depth -->
+<div class="fixed inset-0 ambient-glow pointer-events-none z-0"></div>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop py-12 relative z-10 pb-32">
+<!-- Vault Container -->
+<div class="relative w-full max-w-md flex flex-col items-center">
+<!-- Biometric / Lock Prompt Area -->
+<div class="relative w-40 h-40 mb-10 flex items-center justify-center rounded-full biometric-pulse bg-surface-container-highest/50 backdrop-blur-md glass-border shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<!-- Inner glow ring -->
+<div class="absolute inset-2 rounded-full border border-primary/20"></div>
+<!-- Icon -->
+<span class="material-symbols-outlined text-6xl text-primary drop-shadow-[0_0_15px_rgba(137,206,255,0.5)]" style="font-variation-settings: 'FILL' 0, 'wght' 200;">
+                    lock
+                </span>
+</div>
+<!-- Headers -->
+<div class="text-center mb-12 space-y-4">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Hidden Nest is Locked</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mx-auto leading-relaxed">
+                    Authentication required to access isolated secure environment.
+                </p>
+</div>
+<!-- Action Buttons -->
+<div class="w-full space-y-4 px-4">
+<!-- Primary Action (Gradient) -->
+<button class="w-full relative group overflow-hidden rounded-xl p-0.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-90 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative bg-surface/20 backdrop-blur-sm rounded-[10px] flex items-center justify-center gap-3 py-4 px-6 font-label-md text-label-md text-surface-container-lowest font-bold tracking-wide">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+                        Unlock with Biometrics
+                    </div>
+</button>
+<!-- Secondary Action (Ghost) -->
+<button class="w-full relative group rounded-xl glass-border bg-surface-container/30 hover:bg-surface-container/50 backdrop-blur-md transition-all duration-300 active:scale-[0.98] py-4 px-6 flex items-center justify-center gap-3 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-xl text-on-surface-variant">dialpad</span>
+                    Enter with PIN
+                </button>
+</div>
+<!-- Isolation Footer -->
+<div class="mt-16 flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container/40 border border-white/5 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest opacity-80">
+                    This section is completely isolated from your main SafeNest.
+                </span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from Shared Components JSON) -->
+<!-- Shell Relevance: Active on top-level dests. We map Hidden Nest to the 'Passwords' semantic intent as it is a secure vault area. -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl fixed bottom-0 w-full z-50 shadow-[0_-20px_40px_rgba(0,0,0,0.4)] md:hidden">
+<!-- Structural Layout Container -->
+<div class="flex justify-around items-center px-4 py-3 w-full">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'wght' 300;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<!-- Files -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'wght' 300;">folder_open</span>
+<span class="font-label-sm text-label-sm mt-1">Files</span>
+</button>
+<!-- Upload (FAB-like center action) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200 group relative -top-2">
+<div class="bg-surface-container-high rounded-full p-2 border border-white/5 shadow-lg group-hover:shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300" style="font-variation-settings: 'wght' 200;">add_circle</span>
+</div>
+<span class="font-label-sm text-label-sm mt-1">Upload</span>
+</button>
+<!-- Passwords (ACTIVE STATE - Semantically mapping Hidden Nest here) -->
+<button class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl p-2 scale-95 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">password</span>
+<span class="font-label-sm text-label-sm mt-1">Passwords</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'wght' 300;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</div>
+</nav>
+<!-- Desktop Navigation Fallback (Hidden on mobile, showing standard shell layout principles) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl justify-between items-center px-margin-desktop py-4">
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">nest_secure_alarm</span>
+            SafeNest
+        </div>
+<div class="flex items-center gap-8">
+<button class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors">Home</button>
+<button class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors">Files</button>
+<button class="text-primary font-label-md text-label-md font-bold transition-colors border-b-2 border-primary pb-1">Hidden Nest</button>
+<button class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors">Profile</button>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+</nav>
+</body></html>

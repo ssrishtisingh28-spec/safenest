@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Files</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#d4e4fa",
+                        "inverse-surface": "#d4e4fa",
+                        "surface-variant": "#273647",
+                        "surface-tint": "#89ceff",
+                        "primary": "#89ceff",
+                        "on-surface-variant": "#bec8d2",
+                        "secondary-container": "#00a6e0",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#2c3a4c",
+                        "surface-container-highest": "#273647",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "on-secondary-fixed": "#001e2c",
+                        "on-primary-container": "#003751",
+                        "on-secondary": "#00354a",
+                        "on-tertiary-fixed-variant": "#414756",
+                        "primary-fixed-dim": "#89ceff",
+                        "surface-container-lowest": "#010f1f",
+                        "tertiary-container": "#959bad",
+                        "inverse-primary": "#006591",
+                        "on-primary-fixed": "#001e2f",
+                        "outline": "#88929b",
+                        "primary-fixed": "#c9e6ff",
+                        "background": "#051424",
+                        "surface": "#051424",
+                        "inverse-on-surface": "#233143",
+                        "secondary": "#7bd0ff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#dde2f6",
+                        "surface-container-high": "#1c2b3c",
+                        "surface-dim": "#051424",
+                        "surface-container-low": "#0d1c2d",
+                        "on-primary": "#00344d",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#151b29",
+                        "on-background": "#d4e4fa",
+                        "secondary-fixed": "#c4e7ff",
+                        "surface-container": "#122131",
+                        "on-tertiary": "#2a303f",
+                        "on-secondary-container": "#00374d",
+                        "outline-variant": "#3e4850",
+                        "primary-container": "#0ea5e9",
+                        "tertiary-fixed-dim": "#c1c6d9",
+                        "tertiary": "#c1c6d9",
+                        "on-tertiary-container": "#2d3342",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#7bd0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .inner-glow {
+            border: 1px solid transparent;
+            background-image: linear-gradient(to right, theme('colors.surface-variant'), theme('colors.surface-variant')), linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .recessed-input {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Top App Bar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop py-4 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-xl z-50 fixed top-0 transition-all">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold text-primary">SafeNest</span>
+<div class="w-px h-6 bg-white/10"></div>
+<nav class="flex gap-4">
+<a class="flex items-center gap-2 text-on-surface-variant hover:opacity-80 transition-all px-3 py-2 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-2 text-primary bg-primary/10 transition-all px-3 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label-md text-label-md">Files</span>
+</a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:opacity-80 transition-all px-3 py-2 rounded-lg hover:bg-white/5" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">password</span>
+<span class="font-label-md text-label-md">Passwords</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-white/10 transition-all inner-glow">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist metallic sphere reflecting a deep navy blue and soft teal ambient light. The sphere sits on a matte dark slate surface, conveying high-end security, privacy, and digital sanctuary in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFddA32EmuVmbtTJEu7_gwyl5DahWkeC8TKxxxevbrj8qXPm1vAgevlxssh6np2pp-WrG6N-SDGvLI-U9HD3bkP7TXuXXmp6HubAhvWjZlsc2qNUm-Jpc4VlSzDMBV3BbCXI0Dbr5hvlnnNxIMKcV8Ul34hVTZOIkOSqoc0zK7UHKvoba7PHkj3urHP6f0YGpfBFAQLUZCSAG8GBc3FRcyrILaEkKGq3kPt3isktcot-gwg9UFPjcG"/>
+</div>
+</div>
+</header>
+<!-- Top App Bar (Mobile) -->
+<header class="flex md:hidden justify-between items-center px-margin-mobile py-4 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-xl z-50 fixed top-0">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Files</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist metallic sphere reflecting a deep navy blue and soft teal ambient light. The sphere sits on a matte dark slate surface, conveying high-end security, privacy, and digital sanctuary in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDw-LKNtQTEi-gN_rWyxL1g1JZ7KrjRnDWz-uEASWbP-TBxNjGF_Sktdl2JwH-yGCRGjVwDow_Ghuw99dMuV0U9Adlag7hNm-mciGLW1Qg1SZdFPrKZOHTCVPkIYPu07I1BpN2qiV3IGqQmAFbbCKEvOBmkUvejqLiYsBvxcsgkogtzA3WuanxWXfGW1brkR7zkSHl1T03i2Zd0qhVTpYdRI9MYhLcd1tun3pr_RTDdCqO33__impi"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 md:pt-28 pb-24 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col gap-6">
+<!-- Search and Actions Bar -->
+<div class="flex flex-col md:flex-row gap-4 w-full justify-between items-start md:items-center">
+<!-- Search -->
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-[#080C14] text-on-surface border-none rounded-lg pl-10 pr-4 py-2 font-body-md focus:ring-1 focus:ring-primary recessed-input transition-all placeholder:text-on-surface-variant" placeholder="Search your vault..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-high inner-glow text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span class="font-label-md text-label-md hidden md:inline">Filter</span>
+</button>
+<div class="h-6 w-px bg-white/10 mx-1"></div>
+<div class="flex bg-surface-container-high rounded-lg p-1 inner-glow">
+<button aria-label="Grid View" class="p-1.5 rounded bg-white/10 text-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button aria-label="List View" class="p-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+<button class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#00a6e0] to-[#0ea5e9] text-[#001e2f] font-label-md text-label-md hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(14,165,233,0.3)]">
+<span class="material-symbols-outlined">upload</span>
+                    Upload
+                </button>
+</div>
+</div>
+<!-- Categories Tabs -->
+<div class="w-full overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex gap-2 min-w-max">
+<button class="px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/30 font-label-md text-label-md whitespace-nowrap transition-all shadow-[0_0_10px_rgba(137,206,255,0.1)]">All Files</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high inner-glow text-on-surface-variant hover:text-on-surface hover:bg-white/5 font-label-md text-label-md whitespace-nowrap transition-all">Documents</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high inner-glow text-on-surface-variant hover:text-on-surface hover:bg-white/5 font-label-md text-label-md whitespace-nowrap transition-all">Photos</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high inner-glow text-on-surface-variant hover:text-on-surface hover:bg-white/5 font-label-md text-label-md whitespace-nowrap transition-all">Videos</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-high inner-glow text-on-surface-variant hover:text-on-surface hover:bg-white/5 font-label-md text-label-md whitespace-nowrap transition-all">PDFs</button>
+</div>
+</div>
+<!-- File Grid (Bento Style) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2">
+<!-- File Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-high/80 backdrop-blur-xl rounded-xl p-4 inner-glow hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors inner-glow">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-[#080C14] rounded-lg mb-3 flex items-center justify-center inner-glow overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-error opacity-80" style="font-variation-settings: 'FILL' 1;">description</span>
+<!-- Decorative overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/5 pointer-events-none"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">Passport_Copy.pdf</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">2.4 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Oct 12</span>
+</div>
+</div>
+</div>
+<!-- File Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-high/80 backdrop-blur-xl rounded-xl p-4 inner-glow hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors inner-glow">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-[#080C14] rounded-lg mb-3 flex items-center justify-center inner-glow overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-primary-container opacity-80" style="font-variation-settings: 'FILL' 1;">article</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">Contract_Draft_v2.docx</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">45 KB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Oct 10</span>
+</div>
+</div>
+</div>
+<!-- File Card 3 (Image Preview) -->
+<div class="group relative flex flex-col bg-surface-container-high/80 backdrop-blur-xl rounded-xl p-4 inner-glow hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer col-span-2 md:col-span-1">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors inner-glow">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-0.5 rounded-full bg-surface/80 backdrop-blur-md text-primary font-label-sm text-label-sm border border-primary/30 flex items-center gap-1 shadow-[0_0_10px_rgba(137,206,255,0.2)]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Secure
+                    </span>
+</div>
+<div class="w-full aspect-[2/1] md:aspect-square bg-[#080C14] rounded-lg mb-3 inner-glow overflow-hidden relative">
+<img alt="Image Preview" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="A highly secure, abstract dark mode digital vault interior. Walls are composed of matte black architectural panels with subtle teal neon light strips running along the seams, implying impenetrable data protection and high-end sanctuary aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_wF3dhvTq09rjXO0uGtQTu97fHFA2iqJplAUfAcu2Zkg6FSkd5a8__ISdSniS4zXPLubZN2AZRXcQS2pCeNYhTd3b7Jn7ksPj61YmMA6uKulalgvz5Pn0KZeVrLg_4EZ57Ak_OrWHfq1G__ndS_R3kT2qNmD0OTgRxkOrY8Q6whXXpH3YpI8L_SejKWXYRWQyP3CN4qr_vK5aq1rkNp5I7ZG6zc71vA_BXuOTqcBqd12OHTF3J8Wt"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">IMG_8492_Confidential.jpg</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">5.2 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 28</span>
+</div>
+</div>
+</div>
+<!-- File Card 4 -->
+<div class="group relative flex flex-col bg-surface-container-high/80 backdrop-blur-xl rounded-xl p-4 inner-glow hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors inner-glow">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-[#080C14] rounded-lg mb-3 flex items-center justify-center inner-glow overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-tertiary opacity-80" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">Tax Documents 2023</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">14 Items</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 15</span>
+</div>
+</div>
+</div>
+<!-- File Card 5 -->
+<div class="group relative flex flex-col bg-surface-container-high/80 backdrop-blur-xl rounded-xl p-4 inner-glow hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+<button class="p-1 rounded-md bg-surface/80 backdrop-blur-md text-on-surface-variant hover:text-primary transition-colors inner-glow">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-[#080C14] rounded-lg mb-3 flex items-center justify-center inner-glow overflow-hidden relative">
+<span class="material-symbols-outlined text-[48px] text-secondary opacity-80" style="font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">Security_Cam_Front.mp4</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">128 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Sep 01</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hidden Context Menu (Example structure for interactivity, normally hidden) -->
+<!-- 
+        <div class="absolute z-50 bg-surface-container-high inner-glow rounded-xl p-2 w-48 shadow-[0_20px_40px_rgba(0,0,0,0.6)] hidden">
+            <button class="w-full text-left px-3 py-2 rounded-lg text-on-surface hover:bg-white/5 hover:text-primary transition-colors font-label-md text-label-md flex items-center gap-3">
+                <span class="material-symbols-outlined text-[18px]">visibility</span> Open
+            </button>
+            <button class="w-full text-left px-3 py-2 rounded-lg text-on-surface hover:bg-white/5 hover:text-primary transition-colors font-label-md text-label-md flex items-center gap-3">
+                <span class="material-symbols-outlined text-[18px]">download</span> Download
+            </button>
+            <div class="h-px w-full bg-white/5 my-1"></div>
+            <button class="w-full text-left px-3 py-2 rounded-lg text-error hover:bg-error/10 transition-colors font-label-md text-label-md flex items-center gap-3">
+                <span class="material-symbols-outlined text-[18px]">delete</span> Delete
+            </button>
+        </div> 
+        -->
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-t-0 shadow-[0_-20px_40px_rgba(0,0,0,0.4)] flex justify-around items-center px-4 py-3">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl p-2 scale-95 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-label-sm text-label-sm mt-1">Files</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">password</span>
+<span class="font-label-sm text-label-sm mt-1">Passwords</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<!-- Global ambient background effects -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-secondary-container/5 blur-[100px]"></div>
+</div>
+</body></html>

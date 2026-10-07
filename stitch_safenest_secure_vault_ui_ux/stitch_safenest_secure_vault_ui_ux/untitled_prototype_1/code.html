@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Your private space for everything important</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Geist:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#2d2621",
+                        "inverse-surface": "#322f2e",
+                        "surface-variant": "#e7e0db",
+                        "surface-tint": "#5d4037",
+                        "primary": "#5d4037",
+                        "on-surface-variant": "#5a524c",
+                        "secondary-container": "#e0d5d1",
+                        "on-secondary-fixed-variant": "#493e3b",
+                        "on-error-container": "#410002",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-highest": "#e5e1dc",
+                        "on-primary-fixed-variant": "#492d25",
+                        "on-secondary-fixed": "#2c221f",
+                        "on-primary-container": "#412117",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3b4549",
+                        "primary-fixed-dim": "#d9b6ab",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#cde7ed",
+                        "inverse-primary": "#d9b6ab",
+                        "on-primary-fixed": "#2c150e",
+                        "outline": "#8b817c",
+                        "primary-fixed": "#f9d6cc",
+                        "background": "#fbf9f4",
+                        "surface": "#fbf9f4",
+                        "inverse-on-surface": "#f5f0ef",
+                        "secondary": "#745b54",
+                        "on-error": "#ffffff",
+                        "tertiary": "#5d6366",
+                        "surface-container-high": "#ebe6e1",
+                        "surface-dim": "#dbdad5",
+                        "surface-container-low": "#f5f3ee",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#191e21",
+                        "on-background": "#2d2621",
+                        "secondary-fixed": "#fcdad3",
+                        "surface-container": "#efebe6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#2c1a14",
+                        "outline-variant": "#dccbc6",
+                        "primary-container": "#f9d6cc",
+                        "tertiary-fixed-dim": "#b1cbd0",
+                        "tertiary-fixed": "#cde7ed",
+                        "on-tertiary-container": "#181e21",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#dfbeb7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pulse-glow {
+            animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.95);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        .spinner {
+            border: 2px solid theme('colors.surface-variant');
+            border-top: 2px solid theme('colors.primary');
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            background: radial-gradient(circle at center, rgba(93, 64, 55, 0.15) 0%, rgba(251, 249, 244, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen w-screen overflow-hidden flex flex-col justify-center items-center relative font-body-lg">
+<!-- Ambient Background Glow -->
+<div class="absolute inset-0 ambient-glow z-0 pointer-events-none"></div>
+<!-- Center Content -->
+<div class="relative z-10 flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop max-w-md w-full">
+<!-- Logo Container with Pulse Effect -->
+<div class="relative w-32 h-32 mb-8 flex items-center justify-center">
+<!-- Pulsing background circle -->
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl pulse-glow"></div>
+<!-- Logo Image -->
+<img alt="SafeNest Logo" class="relative z-10 w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(93,64,55,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6G6HdAsLW1o7wOiQu_0WAMCeymisE3Q-2W1lpegFKj8d14TsFF5GoMs0dN5Lns_QgvUzZAoYhQTSsdSIf237rMf3vASa_RAvFFHEejLL6rUISuT4PwEfQ31DG9xaA8_C3HnL0M2UNZWEfsOslsyzlWQ7OywMqZE_lmcsd1dPIRVNbNg6pqL1GgsfGTFonKGwpDOuE34JSMssqDJDs-qoet9tTYaz1KXPfo_f-JnsbAGvTGJRaNbRt"/>
+</div>
+<!-- Typography -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-4 tracking-tight drop-shadow-sm">
+            SafeNest
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs mx-auto drop-shadow-sm">
+            Your private space for everything important.
+        </p>
+</div>
+<!-- Loading Indicator -->
+<div class="absolute bottom-16 left-0 right-0 flex justify-center items-center z-10">
+<div class="spinner"></div>
+</div>
+</body></html>

@@ -1,0 +1,95 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        // Semantic dynamic CSS variable-based or direct tokens
+        "surface": "var(--color-surface)",
+        "surface-dim": "var(--color-surface-dim)",
+        "surface-bright": "var(--color-surface-bright)",
+        "surface-container-lowest": "var(--color-surface-container-lowest)",
+        "surface-container-low": "var(--color-surface-container-low)",
+        "surface-container": "var(--color-surface-container)",
+        "surface-container-high": "var(--color-surface-container-high)",
+        "surface-container-highest": "var(--color-surface-container-highest)",
+        "on-surface": "var(--color-on-surface)",
+        "on-surface-variant": "var(--color-on-surface-variant)",
+        "inverse-surface": "var(--color-inverse-surface)",
+        "inverse-on-surface": "var(--color-inverse-on-surface)",
+        "outline": "var(--color-outline)",
+        "outline-variant": "var(--color-outline-variant)",
+        "surface-tint": "var(--color-surface-tint)",
+        "primary": "var(--color-primary)",
+        "on-primary": "var(--color-on-primary)",
+        "primary-container": "var(--color-primary-container)",
+        "on-primary-container": "var(--color-on-primary-container)",
+        "secondary": "var(--color-secondary)",
+        "on-secondary": "var(--color-on-secondary)",
+        "secondary-container": "var(--color-secondary-container)",
+        "on-secondary-container": "var(--color-on-secondary-container)",
+        "tertiary": "var(--color-tertiary)",
+        "on-tertiary": "var(--color-on-tertiary)",
+        "tertiary-container": "var(--color-tertiary-container)",
+        "on-tertiary-container": "var(--color-on-tertiary-container)",
+        "error": "var(--color-error)",
+        "on-error": "var(--color-on-error)",
+        "error-container": "var(--color-error-container)",
+        "on-error-container": "var(--color-on-error-container)",
+        "background": "var(--color-background)",
+        "on-background": "var(--color-on-background)",
+        // Theme specific extras
+        "gold": "#D4AF37",
+        "copper": "#B87333",
+        "mocha": "#5D4037",
+        "teal-neon": "#0ea5e9",
+        "sand-light": "#EFEBE9",
+      },
+      borderRadius: {
+        "DEFAULT": "0.5rem",
+        "sm": "0.25rem",
+        "md": "0.75rem",
+        "lg": "1rem",
+        "xl": "1.5rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "unit": "8px",
+        "gutter": "24px",
+        "margin-mobile": "20px",
+        "margin-desktop": "40px",
+        "container-max": "1200px"
+      },
+      fontFamily: {
+        "sans": ["Inter", "Manrope", "sans-serif"],
+        "inter": ["Inter", "sans-serif"],
+        "manrope": ["Manrope", "sans-serif"],
+        "geist": ["Geist", "sans-serif"],
+        "mono": ["JetBrains Mono", "monospace"],
+        "body-lg": ["Inter", "Manrope", "sans-serif"],
+        "headline-lg": ["Inter", "Manrope", "sans-serif"],
+        "label-md": ["Geist", "JetBrains Mono", "sans-serif"],
+        "body-md": ["Inter", "sans-serif"],
+        "headline-lg-mobile": ["Inter", "Manrope", "sans-serif"],
+        "headline-md": ["Inter", "Manrope", "sans-serif"],
+        "label-sm": ["Geist", "JetBrains Mono", "sans-serif"],
+        "headline-xl": ["Inter", "Manrope", "sans-serif"]
+      },
+      fontSize: {
+        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+      }
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-high": "#eae8e3",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#30312e",
+                "tertiary-fixed": "#fadcd2",
+                "primary-fixed-dim": "#e7bdb1",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f4",
+                "surface-container": "#f0eee9",
+                "secondary": "#735c00",
+                "primary-container": "#5d4037",
+                "secondary-container": "#fed65b",
+                "outline": "#827470",
+                "tertiary": "#3f2d26",
+                "on-secondary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#ddc1b7",
+                "on-primary-fixed": "#2c160e",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#e7bdb1",
+                "on-primary-fixed-variant": "#5d4037",
+                "surface-dim": "#dbdad5",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary-fixed": "#241a00",
+                "inverse-on-surface": "#f2f1ec",
+                "surface-tint": "#77574d",
+                "background": "#fbf9f4",
+                "mocha-dark": "#3E2723",
+                "tertiary-container": "#57433b",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#ffe088",
+                "surface-variant": "#e4e2dd",
+                "on-tertiary-container": "#cbb0a6",
+                "on-tertiary-fixed-variant": "#56423b",
+                "primary-fixed": "#ffdbd0",
+                "on-background": "#1b1c19",
+                "sand-light": "#EFEBE9",
+                "on-error-container": "#93000a",
+                "surface": "#fbf9f4",
+                "primary": "#442a22",
+                "charcoal-text": "#1A1A1A",
+                "copper-accent": "#B87333",
+                "surface-container-highest": "#e4e2dd",
+                "on-tertiary-fixed": "#271812",
+                "on-primary-container": "#d4ada1",
+                "on-surface": "#1b1c19",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#745c00",
+                "surface-cream": "#F9F7F2",
+                "surface-container-low": "#f5f3ee",
+                "on-surface-variant": "#504441",
+                "outline-variant": "#d4c3be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "40px",
+                "unit": "8px",
+                "container-max": "1200px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "JetBrains Mono"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg": [
+                        "Manrope"
+                ],
+                "headline-xl": [
+                        "Manrope"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Manrope"
+                ],
+                "headline-md": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+    }
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar (Web & Mobile) -->
+<header class="fixed top-0 w-full z-50 bg-surface-bright/90 backdrop-blur-xl border-b border-outline-variant/30 flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 shadow-sm">
+<div class="flex items-center gap-4 text-primary hover:opacity-80 active:scale-95 transition-all cursor-pointer">
+<span class="font-headline-md text-headline-md font-bold text-mocha-dark">SafeNest</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden hidden md:block cursor-pointer active:scale-95 transition-transform">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A highly detailed, professional headshot portrait of a confident young man in a dark, moody environment. The lighting is dramatic, with subtle teal and blue accents reflecting off the background. The aesthetic is premium, secure, and modern, aligning perfectly with a high-end digital sanctuary theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOtCJWiRppnSt0Zm9wHcOziNlNPCt_8348-1eaF9UUA9oXASwfbqyTTkp6ssadgb2Ww5UYxRWWFp2f_nR7T5JOVk_ktv58OTQSies1hBMBBob4MzrpQrvATR7n-7ucChVemxLPCQDCiAPWK9kmvdiPrIV8ge6RAHu-oNYDzmyPq9lTzZOi6lF5to48GMLeAvdxuR9T3123Q_VVSYrYt7wO6ijHAoTDS2s31-ZE23-YZ-EbOiFAsql1"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 md:pt-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Profile Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 mb-8 flex flex-col md:flex-row items-center md:items-start gap-6 shadow-sm border border-outline-variant/20">
+<div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
+<img alt="Alex Sterling" class="w-full h-full object-cover" data-alt="A highly detailed, professional headshot portrait of a confident young man named Alex Sterling in a dark, moody environment. The lighting is dramatic, with subtle teal and blue accents reflecting off the background. The aesthetic is premium, secure, and modern, aligning perfectly with a high-end digital sanctuary theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3t9ZkQvSqIgxX1gffWNd4KqOmpP4L1DWSMNQ5Rk89osIC7kt1h72DVPJPtf7HqUNkC6konYFk6x4TyOZ42G4vaUoQNUv_rfYnLQVRf4-SMgxcFF_vbfVtitxl6kS0G_9zo_IYGzs17xj9mVybsRcEhtrce3MsCqW78FoyK6u-3ZzLc2J1FNe1ko4_FXypxEzoLWcAy9NobV0oE2e2QF6ljaHzbLjKrhmxfrFqyBMyU4sTlGrJmfzi"/>
+</div>
+<div class="text-center md:text-left flex-grow space-y-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-on-surface">Alex Sterling</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">alex.sterling@example.com</p>
+<div class="flex items-center justify-center md:justify-start gap-2 mt-1">
+<span class="font-label-md text-label-md text-outline">ID: SN-8492-X</span>
+</div>
+</div>
+<div class="shrink-0 pt-2">
+<div class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+<span class="font-label-md text-label-md">Account Protected</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<!-- Account Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-4 pb-2 border-b border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-mocha-dark">manage_accounts</span> Account
+                </h2>
+<div class="flex flex-col space-y-2">
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">edit_square</span>
+<span class="font-body-md text-body-md text-primary">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">key</span>
+<span class="font-body-md text-body-md text-primary">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">security</span>
+<span class="font-body-md text-body-md text-primary">Security Settings</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- SafeNest Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-4 pb-2 border-b border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-mocha-dark">cloud</span> SafeNest
+                </h2>
+<div class="flex flex-col space-y-2">
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">storage</span>
+<span class="font-body-md text-body-md text-primary">Storage</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">visibility_off</span>
+<span class="font-body-md text-body-md text-primary">Hidden Nest</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">backup</span>
+<span class="font-body-md text-body-md text-primary">Backup</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Preferences Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-4 pb-2 border-b border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-mocha-dark">settings</span> Preferences
+                </h2>
+<div class="flex flex-col space-y-2">
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">notifications_active</span>
+<span class="font-body-md text-body-md text-primary">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">palette</span>
+<span class="font-body-md text-body-md text-primary">Appearance</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">language</span>
+<span class="font-body-md text-body-md text-primary">Language</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Support Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-4 pb-2 border-b border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-mocha-dark">help</span> Support
+                </h2>
+<div class="flex flex-col space-y-2">
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">support_agent</span>
+<span class="font-body-md text-body-md text-primary">Help Center</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-mocha-dark group-hover:text-primary transition-colors">contact_support</span>
+<span class="font-body-md text-body-md text-primary">Contact</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="flex justify-center mb-12 md:mb-8">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-bright/90 backdrop-blur-xl border-t border-outline-variant/30 flex justify-around items-center h-20 pb-safe px-4 rounded-t-xl shadow-[0_-4px_6px_-1px_rgba(93,64,55,0.05)] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label-sm text-label-sm mt-1">Files</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-sm text-label-sm mt-1">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/20 rounded-xl px-3 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

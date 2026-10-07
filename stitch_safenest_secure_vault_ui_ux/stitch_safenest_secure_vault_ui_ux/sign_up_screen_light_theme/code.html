@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeNest - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fbf9f4",
+                        "surface-dim": "#dbdad5",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container": "#efece8",
+                        "surface-container-high": "#e9e7e2",
+                        "surface-container-highest": "#e4e1dc",
+                        "on-surface": "#1b1b1a",
+                        "on-surface-variant": "#4d463e",
+                        "outline": "#7f756c",
+                        "outline-variant": "#d0c5b7",
+                        "inverse-surface": "#30302e",
+                        "inverse-on-surface": "#f3f0ea",
+                        "surface-tint": "#815510",
+                        "primary": "#815510",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ffddaf",
+                        "on-primary-container": "#291800",
+                        "secondary": "#6d5c40",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#f8dfbb",
+                        "on-secondary-container": "#261a04",
+                        "tertiary": "#4f6354",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#d2e8d4",
+                        "on-tertiary-container": "#0c1f13",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#410002",
+                        "background": "#fbf9f4",
+                        "on-background": "#1b1b1a",
+                        "primary-fixed": "#ffddaf",
+                        "primary-fixed-dim": "#f8bc6e",
+                        "on-primary-fixed": "#291800",
+                        "on-primary-fixed-variant": "#633e00",
+                        "secondary-fixed": "#f8dfbb",
+                        "secondary-fixed-dim": "#db286",
+                        "on-secondary-fixed": "#261a04",
+                        "on-secondary-fixed-variant": "#54442a",
+                        "tertiary-fixed": "#d2e8d4",
+                        "tertiary-fixed-dim": "#b6ccb9",
+                        "on-tertiary-fixed": "#0c1f13",
+                        "on-tertiary-fixed-variant": "#384b3d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .inner-glow {
+            box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.5), inset -1px -1px 0px 0px rgba(0, 0, 0, 0.05);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px rgba(129, 85, 16, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #815510, #6d5c40);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #815510, #6d5c40);
+        }
+        .recessed-input {
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #d0c5b7;
+            transition: all 0.2s ease;
+        }
+        .recessed-input:focus {
+            border-color: #815510;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 0 0 1px #815510;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop relative overflow-hidden">
+<!-- Atmospheric Background Layers -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-container-high/50 via-background to-background -z-10 pointer-events-none"></div>
+<div class="absolute -top-64 -left-64 w-128 h-128 bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none mix-blend-multiply"></div>
+<div class="absolute -bottom-64 -right-64 w-128 h-128 bg-secondary-container/20 rounded-full blur-[120px] -z-10 pointer-events-none mix-blend-multiply"></div>
+<main class="w-full max-w-[480px] bg-surface/90 backdrop-blur-[12px] rounded-xl p-gutter inner-glow ambient-shadow flex flex-col gap-6 relative z-10 border border-outline-variant/30">
+<!-- Header -->
+<header class="text-center flex flex-col gap-2">
+<div class="flex justify-center mb-2">
+<span class="material-symbols-outlined text-[40px] text-primary" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg gradient-text">Create SafeNest</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Fortify your digital sanctuary.</p>
+</header>
+<!-- Divider -->
+<div class="h-px w-full bg-outline-variant/50"></div>
+<!-- Form -->
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="fullName">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70">person</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 recessed-input focus:outline-none" id="fullName" placeholder="Enter your full name" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70">mail</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 recessed-input focus:outline-none" id="email" placeholder="Enter your email" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70">call</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 recessed-input focus:outline-none" id="phone" placeholder="Enter your phone number" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="password">Create Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70">key</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-10 recessed-input focus:outline-none" id="password" placeholder="Create a strong password" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+<!-- Password Strength Indicator -->
+<div class="mt-2 flex gap-1 w-full h-1 rounded-full overflow-hidden bg-surface-container">
+<div class="h-full bg-error w-1/4 transition-all duration-300"></div>
+<div class="h-full bg-surface-container w-1/4 transition-all duration-300"></div>
+<div class="h-full bg-surface-container w-1/4 transition-all duration-300"></div>
+<div class="h-full bg-surface-container w-1/4 transition-all duration-300"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 ml-1">Weak password</p>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="confirmPassword">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70">lock</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-10 recessed-input focus:outline-none" id="confirmPassword" placeholder="Confirm your password" type="password"/>
+</div>
+</div>
+<div class="flex items-start gap-2 mt-2">
+<div class="relative flex items-center h-5">
+<input aria-describedby="terms-description" class="w-4 h-4 rounded bg-surface-container-lowest border-outline-variant text-primary focus:ring-primary focus:ring-offset-background checked:bg-primary" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="text-sm">
+<label class="font-label-md text-label-md text-on-surface-variant cursor-pointer" for="terms">
+                        I agree to the <a class="text-primary hover:underline transition-all" href="#">Terms of Service</a> and <a class="text-primary hover:underline transition-all" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+</div>
+<button class="mt-4 w-full py-3 rounded-lg font-label-md text-label-md text-on-primary bg-primary gradient-bg shadow-[0_4px_14px_rgba(129,85,16,0.3)] hover:shadow-[0_6px_20px_rgba(129,85,16,0.4)] hover:-translate-y-[1px] transition-all duration-200 flex justify-center items-center gap-2" type="submit">
+<span>Create SafeNest</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="text-center mt-2">
+<p class="font-label-md text-label-md text-on-surface-variant">
+                Already have an account? <a class="text-primary font-semibold hover:text-surface-tint transition-colors ml-1" href="#">Login</a>
+</p>
+</div>
+</main>
+<script>
+        // Simple password strength visualization logic (visual only)
+        const passwordInput = document.getElementById('password');
+        const strengthBars = document.querySelectorAll('.mt-2.flex.gap-1 > div');
+        const strengthText = document.querySelector('.mt-2.flex.gap-1 + p');
+
+        passwordInput.addEventListener('input', function(e) {
+            const val = e.target.value;
+            let strength = 0;
+            
+            if (val.length > 0) strength += 1;
+            if (val.length > 5) strength += 1;
+            if (val.length > 8 && /[A-Z]/.test(val) && /[0-9]/.test(val)) strength += 1;
+            if (val.length > 10 && /[^A-Za-z0-9]/.test(val)) strength += 1;
+
+            strengthBars.forEach((bar, index) => {
+                bar.className = 'h-full w-1/4 transition-all duration-300 ' + 
+                    (index < strength ? 
+                        (strength === 1 ? 'bg-error' : strength === 2 ? 'bg-tertiary' : strength === 3 ? 'bg-secondary' : 'bg-primary') 
+                        : 'bg-surface-container');
+            });
+
+            const textColors = ['text-on-surface-variant', 'text-error', 'text-tertiary', 'text-secondary', 'text-primary'];
+            const textLabels = ['Enter password', 'Weak', 'Fair', 'Good', 'Strong'];
+            
+            strengthText.className = `font-label-sm text-label-sm mt-1 ml-1 ${textColors[strength]}`;
+            strengthText.textContent = textLabels[strength] + (strength > 0 ? ' password' : '');
+        });
+    </script>
+</body></html>
